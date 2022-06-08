@@ -22,8 +22,7 @@ The quickest way to test-drive the packages here is on
 we talk about what we need to get a minimal example up and
 running on your personal machine. For more,
 
-1. [Documentation](examples/latex/documentation.pdf)
-2. [Symbol shortcut table](https://tashfeen.org/homework/symbol.html)
+- [Documentation](examples/latex/documentation.pdf)
 
 ### Prerequisites
 
@@ -132,8 +131,7 @@ src="path/to/hwjax.js"></script>`. Here is a complete example:
 </body></html>
 ```
 
-This html file will look like
-[this](https://tashfeen.org/homework/minimal.html) in the browser.
+This html file will look like this in the browser.
 
 <p align="center"><img src="./media/min_html.png" width="80%" /></p>
 
