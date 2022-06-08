@@ -1,0 +1,36 @@
+\documentclass{homework}
+\author{Musa Al`Khwarizmi}
+\class{CS 3141: Prof. Kamil's Algorithm Analysis}
+\date{\today}
+\title{Minimal Complete Document}
+\address{Bayt El-Hikmah}
+
+\begin{document} \maketitle
+
+\question Write down sets in order of containment.
+
+We pretend that equivalence classes are just numbers.
+\[
+  \C \supset \R \supset \Q \supset \Z \supset \N \supset
+  \P \not\supset (\GF[7] = \modulo[7])  \supset \{\nil\}
+\]
+
+\question Give an example element of $\O(n)$.
+
+Take $11n \in \O(n)$.
+
+\question Find roots of $x^2- 8x = 9$.
+
+We proceed by factoring,
+\begin{align*}
+  x^2- 8x - 9         &= 9-9 && \text{Subtract 9 on both sides.}         \\
+  x^2- x + 9x - 9     &= 0   && \text{Breaking the middle term.}         \\
+  x(x - 1) + 9(x - 1) &= 0   && \text{Pulling out common factors.}       \\
+  (x - 1)(x + 9)      &= 0   && \text{Pulling out common } (x - 1).      \\
+  x           &\in \{1, -9\} && f(x)g(x) = 0 \Ra f(x) = 0 \vee g(x) = 0. \\
+\end{align*}
+
+\question Show P $\?$ NP.
+
+Let P be zero... Sorry.
+\end{document}

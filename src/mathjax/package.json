@@ -1,0 +1,27 @@
+{
+  "name": "hwjax",
+  "version": "0.0.1",
+  "description": "Tashfeen's custom build of MathJax.",
+  "scripts": {
+    "test": "brave-browser ../../examples/mathjax/test.html",
+    "make-hwjax": "(cd ./hwjax && exec node ../node_modules/mathjax-full/components/bin/pack)",
+    "make-hwsymb": "(cd ./hwsymb_ext && exec node ../node_modules/mathjax-full/components/bin/pack)",
+    "build" : "node ./node_modules/mathjax-full/components/bin/makeAll"
+  },
+  "keywords": [
+    "mathjax",
+    "latex",
+    "homework"
+  ],
+  "author": "Tashfeen, A.",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "mathjax-full": "^3.1.2",
+    "terser-webpack-plugin": "^5.0.3",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
+  }
+}

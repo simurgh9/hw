@@ -1,0 +1,56 @@
+% Tashfeen's symbol macros
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{hwsymb}[2021/01/01 hwsymb]
+
+\RequirePackage{amsmath, amssymb, amsthm, amscd, graphicx}
+
+% new and renewed commands
+\DeclareRobustCommand{\bb}[1]{\mathbb{#1}}
+\DeclareRobustCommand{\cal}[1]{\mathcal{#1}}
+\DeclareRobustCommand{\sc}[1]{\textsc{#1}}
+\DeclareMathOperator{\D}{d}
+\renewcommand{\qedsymbol}{$_{\scriptstyle \substack{\sc{quod}\\\sc{erat}\\\sc{dem}\scalebox{0.53}{$\blacksquare$}}}$}
+% beamer does not define a \labelenumi therefore this can't be renewed.
+\def\labelenumi{\theenumi)} % to make (n) into n)
+
+% Deprecated Set Symbols
+\newcommand{\bC}{\bb{C}\PackageWarning{hwsymb}{\noexpand\bC is deprecated, use \noexpand\C instead}}
+\newcommand{\bR}{\bb{R}\PackageWarning{hwsymb}{\noexpand\bR is deprecated, use \noexpand\R instead}}
+\newcommand{\bQ}{\bb{Q}\PackageWarning{hwsymb}{\noexpand\bQ is deprecated, use \noexpand\Q instead}}
+\newcommand{\bZ}{\bb{Z}\PackageWarning{hwsymb}{\noexpand\bZ is deprecated, use \noexpand\Z instead}}
+\newcommand{\bN}{\bb{N}\PackageWarning{hwsymb}{\noexpand\bN is deprecated, use \noexpand\N instead}}
+
+% Symbols
+\newcommand*{\eg}{\leavevmode\unskip , e. g., \ignorespaces}
+\newcommand*{\ie}{\leavevmode\unskip, i. e., \ignorespaces}
+\newcommand{\nil}{\varnothing}
+\AtBeginDocument{\def\O{\cal{O}}} % Big Oh
+\AtBeginDocument{\def\C{\bb{C}}} % Complex
+\newcommand{\R}{\bb{R}} % Reals
+\newcommand{\Q}{\bb{Q}} % Rationals
+\newcommand{\Z}{\bb{Z}} % Integers
+\newcommand{\N}{\bb{N}} % Naturals
+\renewcommand{\P}{\bb{P}} % Primes
+\newcommand{\F}{\bb{F}} % Field
+\newcommand{\GF}[1][2]{\bb{F}_{#1}} % Galois Field
+\newcommand{\modulo}[1][n]{\Z/#1\Z} % Modulo class n
+\newcommand{\ra}{\rightarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\?}{\stackrel{?}{=}}
+\newcommand{\is}{\equiv}
+\newcommand{\al}{\alpha}
+\newcommand{\ep}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\newcommand{\p}{\partial}
+\newcommand{\injective}{\hookrightarrow}
+\newcommand{\surjective}{\twoheadrightarrow}
+\newcommand{\bijective}{\hookrightarrow\mathrel{\mspace{-15mu}}\rightarrow}
+\newcommand{\derivative}[2][x]{\frac{\D #2}{\D #1}}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\near}[1]{\left\lfloor#1\right\rceil}
+\newcommand{\arr}[1]{\left\langle#1\right\rangle}
+\newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\brk}[1]{\left[#1\right]}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\curl}[1]{\left\{#1\right\}}

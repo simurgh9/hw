@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html><head><script async src="hwjax.js"></script></head>
+<body style="font-family:sans-serif">
+  Musa Al`Khwarizmi<br>
+  CS 3141: Prof. Kamil's Algorithm Analysis<br>
+  January 8, 2021<br>
+  
+  <h1>Minimal Complete Document</h1>
+  
+  Question 1. Write down sets in order of containment.<br>
+  We pretend that equivalence classes are just numbers.
+  \[
+  \C \supset \R \supset \Q \supset \Z \supset \N \supset \P
+  \not\supset (\GF[7] = \modulo[7])  \supset \{\nil\}
+  \]
+
+  Question 2. Give an example element of $\O(n)$.<br>
+  Take $11n \in \O(n)$.
+
+  Question 3. Find roots of $x^2- 8x = 9$.<br>
+  We proceed by factoring,
+  \begin{align*}
+  x^2- 8x - 9         &= 9-9         && \text{Subtract 9 on both sides.}         \\
+  x^2- x + 9x - 9     &= 0           && \text{Breaking the middle term.}         \\
+  x(x - 1) + 9(x - 1) &= 0           && \text{Pulling out common factors.}       \\
+  (x - 1)(x + 9)      &= 0           && \text{Pulling out common } (x - 1).      \\
+  x                   &\in \{1, -9\} && f(x)g(x) = 0 \Ra f(x) = 0 \vee g(x) = 0. \\
+  \end{align*}
+
+  Question 4. Show P $\?$ NP.<br>
+  Let P be zero... Sorry.
+</body></html>

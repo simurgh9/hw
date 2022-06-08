@@ -1,0 +1,177 @@
+%% hw.tex Copyright (C) 2020  Ahmad Tashfeen
+%% This program comes with ABSOLUTELY NO WARRANTY.
+%% This is free software, and you are welcome to redistribute it
+%% under certain conditions; read file COPYING for more details.
+
+\documentclass{homework}
+
+\author{Musa Al`Khwarizmi}
+\class{CS 3141: Prof. Kamil's Algorithm Analysis}
+\date{\today}
+\title{Homework Class Test}
+\address{Bayt El-Hikmah}
+
+\graphicspath{{../../media/}} % tex.stackexchange.com/q/139401/215221
+\newcommand{\bk}{\textbackslash}
+\newcommand{\dummy}[1]{\texttt{\bk #1\{\bk frac\{x\}\{2\}\}}}
+
+\begin{document} \maketitle
+
+\question What is this document?
+
+This is a demonstration of my homework \LaTeX{} class. It is an extension of the \texttt{amsart} and should have all of its functionality.
+
+\question What preamble commands does the class have?
+
+We have all that AMS article has, the preamble for this document had:
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+  ...
+  \author{Musa Al`Khwarizmi}
+  \class{CS 3141: Prof. Kamil's Algorithm Analysis}
+  \date{\today}
+  \title{Homework Class Test}
+  \address{Bayt El-Hikmah}
+  ...
+\end{lstlisting}
+
+\question What symbol shortcuts does it have?
+
+It has the symbols shown in table \ref{symbols},
+
+\begin{table}[hbtp]
+  \begin{tabular}{ | c | c | c | c | }
+    \hline
+    Macro                      & Symbol       & Macro                               & Symbol                \\ \hline
+    \texttt{\bk C}             & $\C$         & \dummy{floor}                       & $\floor{\frac{x}{2}}$ \\ \hline
+    \texttt{\bk R}             & $\R$         & \dummy{ceil}                        & $\ceil{\frac{x}{2}}$  \\ \hline
+    \texttt{\bk Q}             & $\Q$         & \dummy{near}                        & $\near{\frac{x}{2}}$  \\ \hline
+    \texttt{\bk Z}             & $\Z$         & \dummy{arr}                         & $\arr{\frac{x}{2}}$   \\ \hline
+    \texttt{\bk N}             & $\N$         & \dummy{paren}                       & $\paren{\frac{x}{2}}$ \\ \hline
+    \texttt{\bk P}             & $\P$         & \dummy{brk}                         & $\brk{\frac{x}{2}}$   \\ \hline
+    \texttt{\bk F}             & $\F$         & \dummy{curl}                        & $\curl{\frac{x}{2}}$  \\ \hline
+    \texttt{\bk GF, \bk GF[7]} & $\GF,\GF[7]$ & \dummy{abs}                         & $\abs{\frac{x}{2}}$   \\ \hline
+    \texttt{\bk 0}             & $\nil$       & \texttt{\bk modulo[7]}              & $\modulo[7]$          \\ \hline
+    \texttt{\bk O(n)}          & $\O(n)$      & \texttt{\bk vec\{v\}}               & $\vec{v}$             \\ \hline
+    \texttt{\bk ?}             & $\?$         & \texttt{\bk bijective}              & $\bijective$          \\ \hline
+    \texttt{\bk is}            & $\is$        & \texttt{\bk surjective}             & $\surjective$         \\ \hline
+    \texttt{\bk al}            & $\al$        & \texttt{\bk injective}              & $\injective$          \\ \hline
+    \texttt{\bk ep}            & $\ep$        & \texttt{\bk Ra}                     & $\Ra$                 \\ \hline
+    \texttt{\bk phi}           & $\phi$       & \texttt{\bk ra}                     & $\ra$                 \\ \hline
+    \texttt{\bk p}             & $\p$         & \texttt{\bk derivative[g]\{f\}}     & $\derivative[g]{f}$   \\ \hline
+    \texttt{\bk D}             & $\D$         & \texttt{\bk derivative\{\bk zeta\}} & $\derivative{\zeta}$  \\ \hline
+  \end{tabular}
+  \caption{Symbols table.}\label{symbols}
+\end{table}
+
+The commands that have twin delimiters expand according to their input,
+
+\[
+  \floor{x}, \ceil{y}, \near{z}, \arr{x,y,z},
+  \floor{\frac{x}{2}} < \frac{x}{2} < \ceil{\frac{x}{2}},
+  \near{\frac{x}{2}},
+  \arr{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+  \paren{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+  \brk{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+  \curl{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+  \abs{\frac{x}{2}}
+\]
+
+\question Are pictures still a pain though?
+
+No! We have: \texttt{\bk fig[<w>]\{<path/f0.png>, ... , <path/fn.png>\}\{<caption>\}\{<label>\}\}}.
+
+Or, you can set the path to all the images once with \texttt{\bk graphicspath\{\{path\}\}} in the preamble and then you can do, \texttt{\bk fig[<w>]\{<f0.png>, <f1.png>, <f2.png>, ...\}\{<caption>\}\{<label>\}\}}
+
+We did \texttt{\bk graphicspath\{\{../media/\}\}} with
+
+\texttt{\bk fig[0.2]\{khwarizmi.png, kitab.jpg, page.png\}\{Al`Khwarizmi\}\{trio\}\}} to get the figure \ref{trio}.
+
+\fig[0.2]{khwarizmi.png, kitab.jpg, page.png}{Al`Khwarizmi}{trio}
+% \rightfig[0.15]{khwarizmi.png}{}{right_image}
+
+
+\question We have all AMS article environments such as proof. Prove that $\exists (x,y) \in \Z$ such that $x+y = 4$.
+\begin{proof} Four is the sum of two integers.
+
+  $1,3 \in \Z$ and $1+3=4$.
+\end{proof}
+Note the fancy \textit{Q.E.D} symbol.
+
+\question{\label{cardinality}} To show citations and references to custom labels: What is the cardinality of $\N$?
+
+It is $\aleph_0$ \cite{arlinghaus1996part} (\texttt{\bk cite\{arlinghaus1996part\}}). See also question \ref{custom-index} (\texttt{\bk ref\{custom-index\}}).
+
+\question What headlines does this class have?
+
+We have the following hierarchy of headlines:
+
+\texttt{\bk question[<custom-ind>]} > \texttt{\bk section\{<name>\}} > \texttt{\bk subsection\{<name>\}} > \texttt{\bk subsubsection\{<name>\}}.
+
+Since we inherited all the section commands from AMS article, we can also use their stared variants. We demonstrate these bellow,
+
+\section{Section}
+\subsection{Subsection}
+\subsection{Subsection}
+
+\section{Another Section}
+\subsection{Subsection}
+\subsubsection*{Subsubsection} This is a started section.
+\subsubsection{Subsubsection} We end here.
+
+\question Are all headlines preceded by the question number they are under?
+
+Yes, they are preceded by the index of question they are under.
+
+\section{Section}
+\subsection{Subsection}
+
+\section{Another Section}
+\subsection{Subsection}
+\subsubsection{Subsubsection}
+\subsubsection{Subsubsection} We end here.
+
+\question[IX]{\label{custom-index}} Is the cardinality of Naturals and Reals the same because they are both infinite?
+
+No, the cardinality of $\R$ is greater because they are also un-listable (uncountable). See also question \ref{cardinality}.
+
+\question What is a complete minimal example?
+
+In listing \ref{doc} we show a complete document using \texttt{homework.cls},
+
+\lstinputlisting[language={[LaTeX]TeX}, caption={Complete \LaTeX{} Document}, label=doc]{minimal.tex}
+
+This will get you a document looking like the one in figure \ref{min}.
+
+\fig[0.7]{min.png}{Out document from listing \ref{doc}.}{min}
+
+\noindent\rule{\textwidth}{0.1ex}
+
+Finally, bellow are the two questions that use the \texttt{bonus} environment. Which is really just the residue of the old times when I started with \LaTeX{} and had a separate environment to typset extra-credit questions. I no longer use it because I mostly just end up utilising the optional argument of the question command. But,H here it is regardless!
+
+\begin{bonus} State chain rule.
+
+  Chain Rule:
+  \[
+    \zeta(x) = f(g(x)) \quad \text{ then according to the chain rule: } \quad
+    \derivative{\zeta} = \derivative[g]{f} \times \derivative{g}
+  \]
+\end{bonus}
+
+\begin{bonus} Euclidean Algorithm
+
+  You may write code as in listing \ref{gcd},
+  % https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+  \lstinputlisting[language=Python, caption={Euclidean Algorithm for Greatest Common Factor}, label=gcd]{../../media/sample.py}
+\end{bonus}
+
+% Tashfeen should run C-c C-s XeLatex BibTex XeLatex XeLatex
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{part}{References}
+\bibliographystyle{plain}
+\bibliography{citations}
+
+% \tableofcontents
+
+\end{document}

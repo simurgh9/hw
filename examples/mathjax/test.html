@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homework Mathjax Ext.</title>
+  <script async src="hwjax.js"></script>
+</head>
+<body style="background-color: #31343a; color: white;">
+  <!-- Per file macros -->
+  $\newcommand{\dummy}[1]{\texttt{\\#1\{\\frac\{x\}\{2\}\}}}$
+
+  <h1>Testing Mathjax Homework Extension</h1>
+  Here is the symbol table. Check if all are rendered properly.
+  \begin{array}{ | c | c | c | c | } \hline
+  Macro                    & Symbol     & Macro                             & Symbol              \\ \hline
+  \texttt{\\C}             & \C         & \dummy{floor}                     & \floor{\frac{x}{2}} \\ \hline
+  \texttt{\\R}             & \R         & \dummy{ceil}                      & \ceil{\frac{x}{2}}  \\ \hline
+  \texttt{\\Q}             & \Q         & \dummy{near}                      & \near{\frac{x}{2}}  \\ \hline
+  \texttt{\\Z}             & \Z         & \dummy{arr}                       & \arr{\frac{x}{2}}   \\ \hline
+  \texttt{\\N}             & \N         & \dummy{paren}                     & \paren{\frac{x}{2}} \\ \hline
+  \texttt{\\P}             & \P         & \dummy{brk}                       & \brk{\frac{x}{2}}   \\ \hline
+  \texttt{\\F}             & \F         & \dummy{curl}                      & \curl{\frac{x}{2}}  \\ \hline
+  \texttt{\\GF, \\GF[7]}   & \GF,\GF[7] & \dummy{abs}                       & \abs{\frac{x}{2}}   \\ \hline
+  \texttt{\\nil}           & \nil       & \texttt{\\modulo[7]}              & \modulo[7]          \\ \hline
+  \texttt{\\O(n)}          & \O(n)      & \texttt{\\vec\{v\}}               & \vec{v}             \\ \hline
+  \texttt{\\?}             & \?         & \texttt{\\bijective}              & \bijective          \\ \hline
+  \texttt{\\is}            & \is        & \texttt{\\surjective}             & \surjective         \\ \hline
+  \texttt{\\al}            & \al        & \texttt{\\injective}              & \injective          \\ \hline
+  \texttt{\\ep}            & \ep        & \texttt{\\Ra}                     & \Ra                 \\ \hline
+  \texttt{\\phi}           & \phi       & \texttt{\\ra}                     & \ra                 \\ \hline
+  \texttt{\\p}             & \p         & \texttt{\\derivative[g]\{f\}}     & \derivative[g]{f}   \\ \hline
+  \texttt{\\D}             & \D         & \texttt{\\derivative\{\\zeta\}}   & \derivative{\zeta}  \\ \hline
+  \end{array}
+
+  In-line quadratic: $ax^2+bx+c=0$. Checking expanding macros:
+  $$
+    \floor{x}, \ceil{y}, \near{z}, \arr{x,y,z},
+    \floor{\frac{x}{2}} < \frac{x}{2} < \ceil{\frac{x}{2}},
+    \near{\frac{x}{2}},
+    \arr{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+    \paren{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+    \brk{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+    \curl{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+    \abs{\frac{x}{2}}
+  $$
+
+  Lastly, checking a environment,
+  \begin{align*}
+    x^2- 8x - 9         & = 9-9         &  & \text{Subtract 9 on both sides.}         \\
+    x^2- x + 9x - 9     & = 0           &  & \text{Breaking the middle term.}         \\
+    x(x - 1) + 9(x - 1) & = 0           &  & \text{Pulling out common factors.}       \\
+    (x - 1)(x + 9)      & = 0           &  & \text{Pulling out common } (x - 1).      \\
+    x                   & \in \{1, -9\} &  & f(x)g(x) = 0 \Ra f(x) = 0 \vee g(x) = 0. \\
+  \end{align*}                                      
+
+  The checks here are by no means exhastive. Though the table above should check all the <code>hwsymb.sty</code> symbols.
+</body>
+</html>

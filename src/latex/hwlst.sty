@@ -1,0 +1,41 @@
+% Tashfeen's code block beautification using package listings
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{hwlst}[2021/01/01 hwlst]
+
+\RequirePackage{listings, xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{codeyellow}{rgb}{0.51, 0.37, 0.012}
+\lstdefinelanguage{js} {
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset {
+  aboveskip=\baselineskip,
+  commentstyle=\color{codegreen},
+  keywordstyle=\bfseries\color{codeyellow},
+  numberstyle=\ttfamily\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  xleftmargin=2em,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2,
+  frame=tb
+}
