@@ -179,7 +179,7 @@ License](COPYING) along with this program.  If not, see
 * [Paul Fili](https://math.okstate.edu/people/fili/): For showing me
   LaTeX and being one of *the* best teachers!
 
-[0]: https://raw.githubusercontent.com/simurgh9/homework/master/src/latex/homework.cls
-[1]: https://raw.githubusercontent.com/simurgh9/homework/master/src/latex/hwlst.sty
-[2]: https://raw.githubusercontent.com/simurgh9/homework/master/src/latex/hwsymb.sty
-[3]: https://raw.githubusercontent.com/simurgh9/homework/master/examples/mathjax/hwjax.js
+[0]: https://raw.githubusercontent.com/simurgh9/hw/master/src/latex/homework.cls
+[1]: https://raw.githubusercontent.com/simurgh9/hw/master/src/latex/hwlst.sty
+[2]: https://raw.githubusercontent.com/simurgh9/hw/master/src/latex/hwsymb.sty
+[3]: https://raw.githubusercontent.com/simurgh9/hw/master/examples/mathjax/hwjax.js
