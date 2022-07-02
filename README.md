@@ -151,6 +151,8 @@ To build your own `hwjax.js` from source, you can navigate to the
 install` followed by the `npm run build`. Afterwards, extract the
 `hwjax.min.js` from the `./src/mathjax/hwjax/` directory.
 
+For more, read [_Building a Custom Component_](https://docs.mathjax.org/en/latest/web/webpack.html#building-a-custom-component)
+
 ## Authors
 
 * moi-même `¯\_( ͡❛ ͜ʖ ͡❛)_/¯`
