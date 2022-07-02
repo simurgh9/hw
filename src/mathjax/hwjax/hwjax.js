@@ -1,3 +1,4 @@
+// https://docs.mathjax.org/en/latest/web/webpack.html#the-control-file
 import '../node_modules/mathjax-full/components/src/startup/lib/startup.js';
 import { Loader } from '../node_modules/mathjax-full/js/components/loader.js';
 import { insert } from '../node_modules/mathjax-full/js/util/Options.js';
@@ -33,6 +34,7 @@ insert(MathJax.config, {
 }, false);
 
 // components we want to combine into one component
+require('../hwsymb_ext/hwsymb.js');  // this is by Tashfeen
 require('../node_modules/mathjax-full/components/src/core/core.js');
 require('../node_modules/mathjax-full/components/src/input/tex-base/tex-base.js');
 require('../node_modules/mathjax-full/components/src/input/tex/extensions/ams/ams.js');
@@ -41,7 +43,6 @@ require('../node_modules/mathjax-full/components/src/input/tex/extensions/config
 require('../node_modules/mathjax-full/components/src/input/tex/extensions/action/action.js');
 require('../node_modules/mathjax-full/components/src/input/tex/extensions/require/require.js');
 require('../node_modules/mathjax-full/components/src/input/tex/extensions/autoload/autoload.js');
-require('../hwsymb_ext/hwsymb.js');
 require('../node_modules/mathjax-full/components/src/a11y/assistive-mml/assistive-mml.js');
 require('../node_modules/mathjax-full/components/src/output/chtml/chtml.js');
 require('../node_modules/mathjax-full/components/src/output/chtml/fonts/tex/tex.js');
