@@ -3,6 +3,9 @@ import { Loader } from '../node_modules/mathjax-full/js/components/loader.js';
 import '../node_modules/mathjax-full/components/src/startup/lib/startup.js';
 import { insert } from '../node_modules/mathjax-full/js/util/Options.js';
 
+
+const CDN = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5';
+
 // indicate the modules that will be loaded by hand below
 Loader.preLoad(
   'loader',
@@ -25,7 +28,7 @@ Loader.preLoad(
 insert(MathJax.config, {
   loader: {
     paths: {
-      mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5',
+      mathjax: CDN,
       custom: '../hwsymb_ext'
     }
   },
@@ -34,7 +37,12 @@ insert(MathJax.config, {
     inlineMath: [['$', '$'], ['\\(', '\\)']]
   },
   chtml: {
-    fontURL: '[mathjax]/components/output/chtml/fonts/woff-v2'
+    fontURL: CDN + '/output/chtml/fonts/woff-v2',
+    font: {  // WTF!?
+      options: {
+        fontURL: CDN + '/output/chtml/fonts/woff-v2'
+      }
+    }
   }
 }, false);
 
