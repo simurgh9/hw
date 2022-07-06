@@ -32,6 +32,9 @@ insert(MathJax.config, {
   tex: {
     packages: { '[+]': ['ams', 'newcommand', 'configmacros', 'action', 'require', 'autoload', 'hwsymb'] },
     inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  chtml: {
+    fontURL: '[mathjax]/components/output/chtml/fonts/woff-v2'
   }
 }, false);
 
