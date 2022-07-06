@@ -12,9 +12,9 @@ import TexError from '../node_modules/mathjax-full/js/input/tex/TexError.js';
 
 const EXTENSION_NAME = 'hwsymb';
 const MAP_NAME = 'hwsymbMap';
+// \cal is already supported
 const MAP = {
   bb: ['Macro', '\\mathbb{#1}', 1],
-  // \cal is already supported
   sc: ['Macro', '\\mathtt{#1}', 1],
   D: ['Macro', '\\mathop{\\rm d}'],
   nil: ['Macro', '\\varnothing'],

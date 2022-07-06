@@ -6,7 +6,7 @@
     "test": "brave-browser ../../examples/mathjax/test.html",
     "make-hwjax": "(cd ./hwjax && exec node ../node_modules/mathjax-full/components/bin/pack)",
     "make-hwsymb": "(cd ./hwsymb_ext && exec node ../node_modules/mathjax-full/components/bin/pack)",
-    "build" : "node ./node_modules/mathjax-full/components/bin/makeAll"
+    "build" : "npm run make-hwsymb && npm run make-hwjax"
   },
   "keywords": [
     "mathjax",
