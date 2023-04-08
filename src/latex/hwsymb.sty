@@ -1,6 +1,6 @@
 % Tashfeen's symbol macros
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{hwsymb}[2021/01/01 hwsymb]
+\ProvidesPackage{hwsymb}[2023/01/01 hwsymb]
 
 \RequirePackage{amsmath, amssymb, amsthm, amscd, graphicx}
 
@@ -12,13 +12,6 @@
 \renewcommand{\qedsymbol}{$_{\scriptstyle \substack{\sc{quod}\\\sc{erat}\\\sc{dem}\scalebox{0.53}{$\blacksquare$}}}$}
 % beamer does not define a \labelenumi therefore this can't be renewed.
 \def\labelenumi{\theenumi)} % to make (n) into n)
-
-% Deprecated Set Symbols
-\newcommand{\bC}{\bb{C}\PackageWarning{hwsymb}{\noexpand\bC is deprecated, use \noexpand\C instead}}
-\newcommand{\bR}{\bb{R}\PackageWarning{hwsymb}{\noexpand\bR is deprecated, use \noexpand\R instead}}
-\newcommand{\bQ}{\bb{Q}\PackageWarning{hwsymb}{\noexpand\bQ is deprecated, use \noexpand\Q instead}}
-\newcommand{\bZ}{\bb{Z}\PackageWarning{hwsymb}{\noexpand\bZ is deprecated, use \noexpand\Z instead}}
-\newcommand{\bN}{\bb{N}\PackageWarning{hwsymb}{\noexpand\bN is deprecated, use \noexpand\N instead}}
 
 % Symbols
 \newcommand*{\eg}{\leavevmode\unskip , e. g., \ignorespaces}

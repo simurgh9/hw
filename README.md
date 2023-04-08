@@ -5,13 +5,15 @@ We provide,
 
 1. [`homework.cls`][0]: A latex class extending the [AMS
    article](https://www.ctan.org/pkg/amsart) for better typeset
-   homework. This class imports the next two packages for symbol
+   homework. This class imports the next three packages for symbol
    shortcuts and code listings.
-2. [`hwlst.sty`][1]: A collection of configurations and additions to
+2. [`hwcmd.sty`][4]: A collection of shortcuts for environments like
+   figure and tabular.
+3. [`hwlst.sty`][1]: A collection of configurations and additions to
    the [Listings](https://www.ctan.org/pkg/listings) package.
-3. [`hwsymb.sty`][2]: Defines a lot of useful shortcuts for bigger
+4. [`hwsymb.sty`][2]: Defines a lot of useful shortcuts for bigger
    macros, e.g., `\Z` for `\mathbb{Z}`.
-4. [`hwjax.js`][3]: A [MathJax v3](https://www.mathjax.org/) custom
+5. [`hwjax.js`][3]: A [MathJax v3](https://www.mathjax.org/) custom
    component that packs `'ams', 'newcommand', 'configmacros',
    'action', 'require', 'autoload', 'hwsymb'` in one Javascript file.
 
@@ -26,7 +28,7 @@ running on your personal machine. For more,
 
 ### Prerequisites
 
-If you want to use the LateX homework class `homework.cls` or one of
+If you want to use the LaTeX homework class `homework.cls` or one of
 the style packages `*.sty` (on your own computer) then you'll need to
 have one of the distributions of LaTeX installed and a text editor,
 there are some good ones for editing `*.tex` files; I use Emacs with
@@ -185,3 +187,4 @@ License](COPYING) along with this program.  If not, see
 [1]: https://raw.githubusercontent.com/simurgh9/hw/master/src/latex/hwlst.sty
 [2]: https://raw.githubusercontent.com/simurgh9/hw/master/src/latex/hwsymb.sty
 [3]: https://raw.githubusercontent.com/simurgh9/hw/master/examples/mathjax/hwjax.js
+[4]: https://raw.githubusercontent.com/simurgh9/hw/master/src/latex/hwcmd.sty

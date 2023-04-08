@@ -8,7 +8,7 @@
 \author{Musa Al`Khwarizmi}
 \class{CS 3141: Prof. Kamil's Algorithm Analysis}
 \date{\today}
-\title{Homework Class Test}
+\title{\LaTeXe{} Homework Class Documentation \& Testing}
 \address{Bayt El-Hikmah}
 
 \graphicspath{{../../media/}} % tex.stackexchange.com/q/139401/215221
@@ -19,12 +19,11 @@
 
 \question What is this document?
 
-This is a demonstration of my homework \LaTeX{} class. It is an extension of the \texttt{amsart} and should have all of its functionality.
+This is a demonstration of my homework class aiming to ease a few of the \textit{hassles} of \LaTeX{}. It is an extension of the \href{https://ctan.org/pkg/amsart}{\textit{American Mathematical Society (AMS) Journal Article}} (\texttt{amsart}) class and should have all of its functionality.
 
 \question What preamble commands does the class have?
 
 We have all that AMS article has, the preamble for this document had:
-
 \begin{lstlisting}[language={[LaTeX]TeX}]
   ...
   \author{Musa Al`Khwarizmi}
@@ -38,34 +37,28 @@ We have all that AMS article has, the preamble for this document had:
 \question What symbol shortcuts does it have?
 
 It has the symbols shown in table \ref{symbols},
-
-\begin{table}[hbtp]
-  \begin{tabular}{ | c | c | c | c | }
-    \hline
-    Macro                      & Symbol       & Macro                               & Symbol                \\ \hline
-    \texttt{\bk C}             & $\C$         & \dummy{floor}                       & $\floor{\frac{x}{2}}$ \\ \hline
-    \texttt{\bk R}             & $\R$         & \dummy{ceil}                        & $\ceil{\frac{x}{2}}$  \\ \hline
-    \texttt{\bk Q}             & $\Q$         & \dummy{near}                        & $\near{\frac{x}{2}}$  \\ \hline
-    \texttt{\bk Z}             & $\Z$         & \dummy{arr}                         & $\arr{\frac{x}{2}}$   \\ \hline
-    \texttt{\bk N}             & $\N$         & \dummy{paren}                       & $\paren{\frac{x}{2}}$ \\ \hline
-    \texttt{\bk P}             & $\P$         & \dummy{brk}                         & $\brk{\frac{x}{2}}$   \\ \hline
-    \texttt{\bk F}             & $\F$         & \dummy{curl}                        & $\curl{\frac{x}{2}}$  \\ \hline
-    \texttt{\bk GF, \bk GF[7]} & $\GF,\GF[7]$ & \dummy{abs}                         & $\abs{\frac{x}{2}}$   \\ \hline
-    \texttt{\bk 0}             & $\nil$       & \texttt{\bk modulo[7]}              & $\modulo[7]$          \\ \hline
-    \texttt{\bk O(n)}          & $\O(n)$      & \texttt{\bk vec\{v\}}               & $\vec{v}$             \\ \hline
-    \texttt{\bk ?}             & $\?$         & \texttt{\bk bijective}              & $\bijective$          \\ \hline
-    \texttt{\bk is}            & $\is$        & \texttt{\bk surjective}             & $\surjective$         \\ \hline
-    \texttt{\bk al}            & $\al$        & \texttt{\bk injective}              & $\injective$          \\ \hline
-    \texttt{\bk ep}            & $\ep$        & \texttt{\bk Ra}                     & $\Ra$                 \\ \hline
-    \texttt{\bk phi}           & $\phi$       & \texttt{\bk ra}                     & $\ra$                 \\ \hline
-    \texttt{\bk p}             & $\p$         & \texttt{\bk derivative[g]\{f\}}     & $\derivative[g]{f}$   \\ \hline
-    \texttt{\bk D}             & $\D$         & \texttt{\bk derivative\{\bk zeta\}} & $\derivative{\zeta}$  \\ \hline
-  \end{tabular}
-  \caption{Symbols table.}\label{symbols}
-\end{table}
+\tbl<symbols>{Symbols table.}{
+  Macro                      & Symbol       & Macro                               & Symbol                \\
+  \texttt{\bk C}             & $\C$         & \dummy{floor}                       & $\floor{\frac{x}{2}}$ \\
+  \texttt{\bk R}             & $\R$         & \dummy{ceil}                        & $\ceil{\frac{x}{2}}$  \\
+  \texttt{\bk Q}             & $\Q$         & \dummy{near}                        & $\near{\frac{x}{2}}$  \\
+  \texttt{\bk Z}             & $\Z$         & \dummy{arr}                         & $\arr{\frac{x}{2}}$   \\
+  \texttt{\bk N}             & $\N$         & \dummy{paren}                       & $\paren{\frac{x}{2}}$ \\
+  \texttt{\bk P}             & $\P$         & \dummy{brk}                         & $\brk{\frac{x}{2}}$   \\
+  \texttt{\bk F}             & $\F$         & \dummy{curl}                        & $\curl{\frac{x}{2}}$  \\
+  \texttt{\bk GF, \bk GF[7]} & $\GF,\GF[7]$ & \dummy{abs}                         & $\abs{\frac{x}{2}}$   \\
+  \texttt{\bk 0}             & $\nil$       & \texttt{\bk modulo[7]}              & $\modulo[7]$          \\
+  \texttt{\bk O(n)}          & $\O(n)$      & \texttt{\bk vec\{v\}}               & $\vec{v}$             \\
+  \texttt{\bk ?}             & $\?$         & \texttt{\bk bijective}              & $\bijective$          \\
+  \texttt{\bk is}            & $\is$        & \texttt{\bk surjective}             & $\surjective$         \\
+  \texttt{\bk al}            & $\al$        & \texttt{\bk injective}              & $\injective$          \\
+  \texttt{\bk ep}            & $\ep$        & \texttt{\bk Ra}                     & $\Ra$                 \\
+  \texttt{\bk phi}           & $\phi$       & \texttt{\bk ra}                     & $\ra$                 \\
+  \texttt{\bk p}             & $\p$         & \texttt{\bk derivative[g]\{f\}}     & $\derivative[g]{f}$   \\
+  \texttt{\bk D}             & $\D$         & \texttt{\bk derivative\{\bk zeta\}} & $\derivative{\zeta}$  \\
+}
 
 The commands that have twin delimiters expand according to their input,
-
 \[
   \floor{x}, \ceil{y}, \near{z}, \arr{x,y,z},
   \floor{\frac{x}{2}} < \frac{x}{2} < \ceil{\frac{x}{2}},
@@ -79,41 +72,99 @@ The commands that have twin delimiters expand according to their input,
 
 \question Are pictures still a pain though?
 
-No! We have: \texttt{\bk fig[<w>]\{<path/f0.png>, ... , <path/fn.png>\}\{<caption>\}\{<label>\}\}}.
+No! we have,
+\begin{center}
+    \texttt{\bk img<label>[width]\{caption\}\{path/f0, path/f1, ... , path/fn\}}
+\end{center}
+Or, you can set the path to all the images once with \texttt{\bk graphicspath\{\{path\}\}} in the preamble and then you can do,
+\begin{center}
+    \texttt{\bk img<label>[width]\{caption\}\{f0, f1, ... , fn\}}.
+\end{center}
+We did \texttt{\bk graphicspath\{\{../media/\}\}} with,
+\begin{center}
+    \texttt{\bk img<trio>[0.2]\{Al`Khwarizmi\}\{khwarizmi, kitab, page\}}
+\end{center}
+to get the figure \ref{trio}.
+\img<trio>[0.2]{Al`Khwarizmi}{khwarizmi, kitab, page}
 
-Or, you can set the path to all the images once with \texttt{\bk graphicspath\{\{path\}\}} in the preamble and then you can do, \texttt{\bk fig[<w>]\{<f0.png>, <f1.png>, <f2.png>, ...\}\{<caption>\}\{<label>\}\}}
+\question What about tables?
 
-We did \texttt{\bk graphicspath\{\{../media/\}\}} with
+The following code to the left gets you the table \ref{smptb}.
 
-\texttt{\bk fig[0.2]\{khwarizmi.png, kitab.jpg, page.png\}\{Al`Khwarizmi\}\{trio\}\}} to get the figure \ref{trio}.
+\medskip
+\begin{minipage}{0.45\textwidth}
+  \begin{verbatim}
+\tbl<smptb>{Sample table.} {
+  Linear & Polynomial & Exponential \\
+  $x$    & $x^2$      & $2^x$       \\
+  1      & 1          &     2       \\
+  2      & 4          &     4       \\
+  3      & 9          &     8       \\
+  4      & 16         &    16       \\
+  5      & 25         &    32       \\
+  6      & 36         &    64       \\
+  7      & 49         &   127       \\
+}
+    \end{verbatim}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth} \hspace{1.9em}
+  \begin{tabular}{||c | c | c ||} \hline
+    Linear & Polynomial & Exponential \\ \hline
+    $x$    & $x^2$      & $2^x$       \\ \hline
+    1      & 1          & 2           \\ \hline
+    2      & 4          & 4           \\ \hline
+    3      & 9          & 8           \\ \hline
+    4      & 16         & 16          \\ \hline
+    5      & 25         & 32          \\ \hline
+    6      & 36         & 64          \\ \hline
+    7      & 49         & 127         \\ \hline
+  \end{tabular}
+  \captionsetup{type=table}
+  \captionof{table}{Sample table.}\label{smptb}
+\end{minipage}
 
-\fig[0.2]{khwarizmi.png, kitab.jpg, page.png}{Al`Khwarizmi}{trio}
-% \rightfig[0.15]{khwarizmi.png}{}{right_image}
+\question Do we have all AMS article environments?
 
+Yes! E. g., the proof environment. Note the fancy \textit{Q.E.D} symbol bellow.
 
-\question We have all AMS article environments such as proof. Prove that $\exists (x,y) \in \Z$ such that $x+y = 4$.
-\begin{proof} Four is the sum of two integers.
+\vspace*{1em}
+\begin{minipage}{0.45\textwidth}
+  \begin{verbatim}
+  \begin{proof}
+    Four is the sum of two integers.
 
-  $1,3 \in \Z$ and $1+3=4$.
-\end{proof}
-Note the fancy \textit{Q.E.D} symbol.
+    $1,3 \in \Z$ and $1+3=4$.
+  \end{proof}
+    \end{verbatim}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth} \hspace{1.9em}
+  \begin{proof}
+    Four is the sum of two integers.
 
-\question{\label{cardinality}} To show citations and references to custom labels: What is the cardinality of $\N$?
+    $1,3 \in \Z$ and $1+3=4$.
+  \end{proof}
+\end{minipage}
+
+\question\label{cardinality} To show citations and references to custom labels: What is the cardinality of $\N$?
 
 It is $\aleph_0$ \cite{arlinghaus1996part} (\texttt{\bk cite\{arlinghaus1996part\}}). See also question \ref{custom-index} (\texttt{\bk ref\{custom-index\}}).
 
 \question What headlines does this class have?
 
 We have the following hierarchy of headlines:
-
-\texttt{\bk question[<custom-ind>]} > \texttt{\bk section\{<name>\}} > \texttt{\bk subsection\{<name>\}} > \texttt{\bk subsubsection\{<name>\}}.
+\begin{enumerate}
+  \item \texttt{\bk question[custom-ind]}
+  \item \texttt{\bk section\{name\}}
+  \item \texttt{\bk subsection\{name\}}
+  \item \texttt{\bk subsubsection\{name\}}.
+\end{enumerate}
 
 Since we inherited all the section commands from AMS article, we can also use their stared variants. We demonstrate these bellow,
-
 \section{Section}
 \subsection{Subsection}
 \subsection{Subsection}
-
 \section{Another Section}
 \subsection{Subsection}
 \subsubsection*{Subsubsection} This is a started section.
@@ -125,15 +176,29 @@ Yes, they are preceded by the index of question they are under.
 
 \section{Section}
 \subsection{Subsection}
-
 \section{Another Section}
 \subsection{Subsection}
 \subsubsection{Subsubsection}
 \subsubsection{Subsubsection} We end here.
 
-\question[IX]{\label{custom-index}} Is the cardinality of Naturals and Reals the same because they are both infinite?
+\question[IX]\label{custom-index} Is the cardinality of Naturals and Reals the same because they are both infinite?
 
-No, the cardinality of $\R$ is greater because they are also un-listable (uncountable). See also question \ref{cardinality}.
+No, the cardinality of $\R$ is greater because they are also uncountable. See also question \ref{cardinality}.
+
+% \vspace{8\baselineskip}% uncomment to see the next question move to the next page
+\question How much space does a question need at the end of a page?
+
+Starting from the question statement, we need at least 8 lines left on the page or the question moves to next page.
+
+[4]
+
+[5]
+
+[6]
+
+[7]
+
+[8]
 
 \question What is a complete minimal example?
 
@@ -141,37 +206,16 @@ In listing \ref{doc} we show a complete document using \texttt{homework.cls},
 
 \lstinputlisting[language={[LaTeX]TeX}, caption={Complete \LaTeX{} Document}, label=doc]{minimal.tex}
 
-This will get you a document looking like the one in figure \ref{min}.
+This will get you a document looking like the one in figure \ref{min}. Note that it appears bigger for illustration purposes only.
 
-\fig[0.7]{min.png}{Out document from listing \ref{doc}.}{min}
-
-\noindent\rule{\textwidth}{0.1ex}
-
-Finally, bellow are the two questions that use the \texttt{bonus} environment. Which is really just the residue of the old times when I started with \LaTeX{} and had a separate environment to typset extra-credit questions. I no longer use it because I mostly just end up utilising the optional argument of the question command. But,H here it is regardless!
-
-\begin{bonus} State chain rule.
-
-  Chain Rule:
-  \[
-    \zeta(x) = f(g(x)) \quad \text{ then according to the chain rule: } \quad
-    \derivative{\zeta} = \derivative[g]{f} \times \derivative{g}
-  \]
-\end{bonus}
-
-\begin{bonus} Euclidean Algorithm
-
-  You may write code as in listing \ref{gcd},
-  % https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
-  \lstinputlisting[language=Python, caption={Euclidean Algorithm for Greatest Common Factor}, label=gcd]{../../media/sample.py}
-\end{bonus}
+\img<min>[0.8]{Out document from listing \ref{doc}.}{./minimal}
 
 % Tashfeen should run C-c C-s XeLatex BibTex XeLatex XeLatex
-\cleardoublepage
+% \cleardoublepage
 \phantomsection
 \addcontentsline{toc}{part}{References}
 \bibliographystyle{plain}
 \bibliography{citations}
 
 % \tableofcontents
-
 \end{document}

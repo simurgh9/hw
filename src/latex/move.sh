@@ -1,5 +1,5 @@
-#!/bin/bash
+#!/bin/zsh
 
-sudo cp --interactive --target-directory=/usr/local/texlive/texmf-local/tex/latex/local/ homework.cls hwlst.sty hwsymb.sty
-sudo chown -R $USER /usr/local/texlive
+sudo cp -i -v homework.cls hwlst.sty hwsymb.sty hwcmd.sty /usr/local/texlive/texmf-local/tex/latex/local/
+sudo chown -R $USER /usr/local/texlive/texmf-local/tex/latex/local/
 mktexlsr
