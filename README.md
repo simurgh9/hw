@@ -148,6 +148,11 @@ You can find more example documents in the examples
   - [Node and NPM](https://nodejs.org/en/) - The Javascript Engine and
     its package manager.
 
+## Resources
+
+1. [Dickimaw Books](https://www.dickimaw-books.com/latex/admin/html/docsvlist.shtml)
+2. [Wikibooks](https://en.wikibooks.org/wiki/LaTeX)
+
 To build your own `hwjax.js` from source, you can navigate to the
 [mathjax source directory](src/mathjax/). There, first run `npm
 install` followed by the `npm run build`. Afterwards, extract the
