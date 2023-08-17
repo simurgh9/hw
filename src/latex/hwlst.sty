@@ -3,8 +3,12 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{hwlst}[2021/01/01 hwlst]
 
-\RequirePackage{listings, xcolor}
-
+\RequirePackage{listings, xcolor, accsupp}
+\newcommand{\noncopynumber}[1]{% keep line numbers from being copied in code listings
+    \BeginAccSupp{method=escape,ActualText={}}
+    #1
+    \EndAccSupp{}
+}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -23,7 +27,7 @@
   aboveskip=\baselineskip,
   commentstyle=\color{codegreen},
   keywordstyle=\bfseries\color{codeyellow},
-  numberstyle=\ttfamily\tiny\color{codegray},
+  numberstyle=\ttfamily\tiny\color{codegray}\noncopynumber,
   stringstyle=\color{codepurple},
   basicstyle=\ttfamily\footnotesize,
   breakatwhitespace=false,
