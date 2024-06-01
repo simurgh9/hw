@@ -6,12 +6,17 @@
 \RequirePackage[caption=false]{subfig}
 \RequirePackage{graphicx, pgffor, ifthen} % for loops and if statements
 \RequirePackage[tableposition=below]{caption} % https://tex.stackexchange.com/a/424725/215221
+\ifx \directlua \undefined \else
+  \RequirePackage{luacolor}
+\fi
 
 \newlength{\unitskipamount}
 \setlength{\unitskipamount}{\medskipamount}
 \gdef\@unitname{Question}
+\gdef\@solcolor{blue}
 \newcounter{UnitCounter}
 \newcommand{\setunitname}[1]{\gdef\@unitname{#1}}
+\newcommand{\setsolcolor}[1]{\gdef\@solcolor{#1}}
 \newcommand{\question}[1][\arabic{UnitCounter}]{%
   \Needspace*{8\baselineskip}%
   \addvspace{\unitskipamount}%
@@ -38,6 +43,18 @@
 }
 
 \ExplSyntaxOn
+\newboolean{solution}
+\setboolean{solution}{true}
+\NewDocumentCommand{\unsolve}{}{%
+  \ifthenelse{\boolean{solution}}%
+  {\setboolean{solution}{false}}%
+  {\setboolean{solution}{true}}%
+}
+
+\NewDocumentEnvironment{sol}{O{\@solcolor} +b}{%
+  \ifthenelse{\boolean{solution}}{\leavevmode\color{#1}\ignorespaces#2}{}%
+}{\ignorespacesafterend}
+
 \NewDocumentCommand\img{d<>O{0.4}mm} {%
   \begin{figure}[hbtp]%
     \foreach \path [count=\i] in {#4} {%
