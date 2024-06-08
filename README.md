@@ -1,4 +1,4 @@
-<p align="center"><img src="./media/logo.png" width="450px" /></p>
+<p align="center"><img src="./media/logo/logo.png" width="450px" /></p>
 <h1 align="center">Beautiful Homework in LaTeX</h1>
 
 We provide,
@@ -166,7 +166,7 @@ For more, read [_Building a Custom Component_](https://docs.mathjax.org/en/lates
 
 ## License
 
-Copyright (C) 2020 Ahmad Tashfeen
+Copyright (C) 2018 Ahmad Tashfeen
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

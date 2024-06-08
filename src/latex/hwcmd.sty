@@ -1,14 +1,13 @@
-% Tashfeen's complicated macros
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{hwcmd}[2023/01/01 hwcmd]
 
-\RequirePackage{comment} % for hiding solutions
+\RequirePackage{comment}% for hiding solutions
 \RequirePackage{graphicx}
-\RequirePackage{needspace} % needspace for dynamic line breaking
-\RequirePackage{hyperref} % for pdf bookmarks, other information and homework.cls
-\RequirePackage{pgffor, ifthen} % for loops and if statements
+\RequirePackage{needspace}% needspace for dynamic line breaking
+\RequirePackage{hyperref}% for pdf bookmarks, other information and homework.cls
+\RequirePackage{pgffor, ifthen}% for loops and if statements
 \RequirePackage[caption=false]{subfig}
-\RequirePackage[tableposition=below]{caption} % https://tex.stackexchange.com/a/424725/215221
+\RequirePackage[tableposition=below]{caption}% https://tex.stackexchange.com/a/424725/215221
 \ifx\directlua\undefined
   \RequirePackage{xcolor}
 \else
@@ -82,7 +81,7 @@
     \caption{#2}%
     \IfValueT{#1}{\label{#1}}%
   \end{table}%
-  \else
+  \else%
   \begin{table}[hbtp]%
     \centering%
     \scribe_tbl:n { #3 }%

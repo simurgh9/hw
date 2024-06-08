@@ -1,4 +1,4 @@
-%% homework.cls  Copyright (C) 2020  Ahmad Tashfeen
+%% homework.cls  Copyright (C) 2018  Ahmad Tashfeen
 %% This program comes with ABSOLUTELY NO WARRANTY.
 %% This is free software, and you are welcome to
 %% redistribute it under certain conditions; read
@@ -23,7 +23,7 @@
 \LoadClass[\hw@ptsize, \hw@side]{amsart}
 \RequirePackage[margin=0.5in]{geometry}
 \RequirePackage{lmodern, enumitem}
-\RequirePackage{hwsymb, hwlst, hwcmd} % tashfeen's
+\RequirePackage{hwsymb, hwlst, hwcmd}
 
 \hypersetup {
   pdfstartview=FitH,
