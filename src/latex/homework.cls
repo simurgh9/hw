@@ -10,7 +10,7 @@
 % 'em' is the horizontal space unit and 'ex' is the vertical
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{homework}[2023/01/01 Homework]
+\ProvidesClass{homework}[2024/01/01 Homework]
 \def\hw@ptsize{12pt} % https://tex.stackexchange.com/a/634138/215221
 \DeclareOption{10pt}{\def\hw@ptsize{10pt}}
 \DeclareOption{11pt}{\def\hw@ptsize{11pt}}
