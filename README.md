@@ -35,6 +35,10 @@ there are some good ones for editing `*.tex` files; I use Emacs with
 AucTeX. For the LaTeX distribution, I recommend [TeX
 Live](https://tug.org/texlive/).
 
+I started with the good ol' `pdflatex` and switched to `xelatex` for
+better language support. These days I am using `lualatex` for better
+colour, language and [accessibility](https://github.com/latex3/tagpdf) support.
+ 
 If you just want to write Markdown or HTML files and want to use the
 symbols (with some macros and environments) defined by the AMS article
 packages and their shortcuts by our packages then you only need the
@@ -79,7 +83,7 @@ We proceed by factoring,
   x^2- x + 9x - 9     &= 0   && \text{Breaking the middle term.}         \\
   x(x - 1) + 9(x - 1) &= 0   && \text{Pulling out common factors.}       \\
   (x - 1)(x + 9)      &= 0   && \text{Pulling out common } (x - 1).      \\
-  x           &\in \{1, -9\} && f(x)g(x) = 0 \Ra f(x) = 0 \vee g(x) = 0. \\
+  x           &\in \{1, -9\} && f(x)g(x) = 0 \Ra (f(x)\vee g(x)) = 0.    \\
 \end{align*}
 
 \question Show P $\?$ NP.
