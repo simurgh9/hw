@@ -3,10 +3,8 @@
 
 We provide,
 
-1. [`homework.cls`][0]: A latex class extending the [AMS
-   article](https://www.ctan.org/pkg/amsart) for better typeset
-   homework. This class imports the next three packages for symbol
-   shortcuts and code listings.
+1. [`homework.cls`][0]: A latex class extending the [AMS article](https://www.ctan.org/pkg/amsart)
+   for better typeset homework.
 2. [`hwcmd.sty`][4]: A collection of shortcuts for environments like
    figure and tabular.
 3. [`hwlst.sty`][1]: A collection of configurations and additions to
@@ -17,6 +15,9 @@ We provide,
    component that packs `'ams', 'newcommand', 'configmacros',
    'action', 'require', 'autoload', 'hwsymb'` in one Javascript file.
 
+Class file `homework.cls` imports the homework style files given
+above. You do not need to do that manually.
+
 ## Getting Started
 
 The quickest way to test-drive the packages here is on
@@ -25,6 +26,7 @@ we talk about what we need to get a minimal example up and
 running on your personal machine. For more,
 
 - [Documentation](examples/latex/documentation.pdf)
+- [Documentation](examples/latex/docs_black.pdf) (for people who have difficulty seeing colours)
 
 ### Prerequisites
 
