@@ -13,18 +13,31 @@
 
 \graphicspath{{../../media/}} % tex.stackexchange.com/q/139401/215221
 \newcommand{\bk}{\textbackslash}
+\renewcommand\tt[1]{\texttt{#1}}
 \newcommand{\dummy}[1]{\texttt{\bk #1\{\bk frac\{x\}\{2\}\}}}
+\newcommand{\amslink}{%
+  \href{https://ctan.org/pkg/amsart}{%
+    \textit{American Mathematical Society (AMS) Journal Article} %
+  }}
+
+% \fold% uncomment this to hide answers.
+% \renewcommand\solcolor{black}% uncomment this if you're colour blind.
 
 \begin{document} \maketitle
 
 \question What is this document?
 
-This is a demonstration of my homework class aiming to ease a few of the \textit{hassles} of \LaTeX{}. It is an extension of the \href{https://ctan.org/pkg/amsart}{\textit{American Mathematical Society (AMS) Journal Article}} (\texttt{amsart}) class and should have all of its functionality.
+\begin{sol}
+  This is a demonstration of my homework class aiming to ease a few of
+  the \textit{hassles} of \LaTeX{}. It is an extension of the \amslink
+  (\tt{amsart}) class and should have all of its functionality.
+\end{sol}
 
 \question What preamble commands does the class have?
 
-We have all that AMS article has, the preamble for this document had:
-\begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{sol}
+  We have all that AMS article has, the preamble for this document had:
+  \begin{lstlisting}[language={[LaTeX]TeX}]
   ...
   \author{Musa Al`Khwarizmi}
   \class{CS 3141: Prof. Kamil's Algorithm Analysis}
@@ -33,67 +46,74 @@ We have all that AMS article has, the preamble for this document had:
   \address{Bayt El-Hikmah}
   ...
 \end{lstlisting}
+\end{sol}
 
 \question What symbol shortcuts does it have?
 
-It has the symbols shown in table \ref{symbols},
-\tbl<symbols>{Symbols table.}{
-  Macro                      & Symbol       & Macro                               & Symbol                \\
-  \texttt{\bk C}             & $\C$         & \dummy{floor}                       & $\floor{\frac{x}{2}}$ \\
-  \texttt{\bk R}             & $\R$         & \dummy{ceil}                        & $\ceil{\frac{x}{2}}$  \\
-  \texttt{\bk Q}             & $\Q$         & \dummy{near}                        & $\near{\frac{x}{2}}$  \\
-  \texttt{\bk Z}             & $\Z$         & \dummy{arr}                         & $\arr{\frac{x}{2}}$   \\
-  \texttt{\bk N}             & $\N$         & \dummy{paren}                       & $\paren{\frac{x}{2}}$ \\
-  \texttt{\bk P}             & $\P$         & \dummy{brk}                         & $\brk{\frac{x}{2}}$   \\
-  \texttt{\bk F}             & $\F$         & \dummy{curl}                        & $\curl{\frac{x}{2}}$  \\
-  \texttt{\bk GF, \bk GF[7]} & $\GF,\GF[7]$ & \dummy{abs}                         & $\abs{\frac{x}{2}}$   \\
-  \texttt{\bk 0}             & $\nil$       & \texttt{\bk modulo[7]}              & $\modulo[7]$          \\
-  \texttt{\bk O(n)}          & $\O(n)$      & \texttt{\bk vec\{v\}}               & $\vec{v}$             \\
-  \texttt{\bk ?}             & $\?$         & \texttt{\bk bijective}              & $\bijective$          \\
-  \texttt{\bk is}            & $\is$        & \texttt{\bk surjective}             & $\surjective$         \\
-  \texttt{\bk al}            & $\al$        & \texttt{\bk injective}              & $\injective$          \\
-  \texttt{\bk ep}            & $\ep$        & \texttt{\bk Ra}                     & $\Ra$                 \\
-  \texttt{\bk phi}           & $\phi$       & \texttt{\bk ra}                     & $\ra$                 \\
-  \texttt{\bk p}             & $\p$         & \texttt{\bk derivative[g]\{f\}}     & $\derivative[g]{f}$   \\
-  \texttt{\bk D}             & $\D$         & \texttt{\bk derivative\{\bk zeta\}} & $\derivative{\zeta}$  \\
-}
+\begin{sol}
+  It has the symbols shown in table \ref{symbols},
+  \tbl<symbols>{Symbols table.}{
+    Macro                  & Symbol       & Macro                           & Symbol                \\
+    \tt{\bk C}             & $\C$         & \dummy{floor}                   & $\floor{\frac{x}{2}}$ \\
+    \tt{\bk R}             & $\R$         & \dummy{ceil}                    & $\ceil{\frac{x}{2}}$  \\
+    \tt{\bk Q}             & $\Q$         & \dummy{near}                    & $\near{\frac{x}{2}}$  \\
+    \tt{\bk Z}             & $\Z$         & \dummy{arr}                     & $\arr{\frac{x}{2}}$   \\
+    \tt{\bk N}             & $\N$         & \dummy{paren}                   & $\paren{\frac{x}{2}}$ \\
+    \tt{\bk P}             & $\P$         & \dummy{brk}                     & $\brk{\frac{x}{2}}$   \\
+    \tt{\bk F}             & $\F$         & \dummy{curl}                    & $\curl{\frac{x}{2}}$  \\
+    \tt{\bk GF, \bk GF[7]} & $\GF,\GF[7]$ & \dummy{abs}                     & $\abs{\frac{x}{2}}$   \\
+    \tt{\bk 0}             & $\nil$       & \tt{\bk modulo[7]}              & $\modulo[7]$          \\
+    \tt{\bk O(n)}          & $\O(n)$      & \tt{\bk vec\{v\}}               & $\vec{v}$             \\
+    \tt{\bk ?}             & $\?$         & \tt{\bk bijective}              & $\bijective$          \\
+    \tt{\bk is}            & $\is$        & \tt{\bk surjective}             & $\surjective$         \\
+    \tt{\bk al}            & $\al$        & \tt{\bk injective}              & $\injective$          \\
+    \tt{\bk ep}            & $\ep$        & \tt{\bk Ra}                     & $\Ra$                 \\
+    \tt{\bk phi}           & $\phi$       & \tt{\bk ra}                     & $\ra$                 \\
+    \tt{\bk p}             & $\p$         & \tt{\bk derivative[g]\{f\}}     & $\derivative[g]{f}$   \\
+    \tt{\bk D}             & $\D$         & \tt{\bk derivative\{\bk zeta\}} & $\derivative{\zeta}$  \\
+  }
 
-The commands that have twin delimiters expand according to their input,
-\[
-  \floor{x}, \ceil{y}, \near{z}, \arr{x,y,z},
-  \floor{\frac{x}{2}} < \frac{x}{2} < \ceil{\frac{x}{2}},
-  \near{\frac{x}{2}},
-  \arr{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
-  \paren{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
-  \brk{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
-  \curl{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
-  \abs{\frac{x}{2}}
-\]
+  The commands that have twin delimiters expand according to their input,
+  \[
+    \floor{x}, \ceil{y}, \near{z}, \arr{x,y,z},
+    \floor{\frac{x}{2}} < \frac{x}{2} < \ceil{\frac{x}{2}},
+    \near{\frac{x}{2}},
+    \arr{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+    \paren{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+    \brk{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+    \curl{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+    \abs{\frac{x}{2}}
+  \]
+\end{sol}
 
 \question Are pictures still a pain though?
 
-No! we have,
-\begin{center}
-    \texttt{\bk img<label>[width]\{caption\}\{path/f0, path/f1, ... , path/fn\}}
-\end{center}
-Or, you can set the path to all the images once with \texttt{\bk graphicspath\{\{path\}\}} in the preamble and then you can do,
-\begin{center}
-    \texttt{\bk img<label>[width]\{caption\}\{f0, f1, ... , fn\}}.
-\end{center}
-We did \texttt{\bk graphicspath\{\{../media/\}\}} with,
-\begin{center}
-    \texttt{\bk img<trio>[0.2]\{Al`Khwarizmi\}\{khwarizmi, kitab, page\}}
-\end{center}
-to get the figure \ref{trio}.
-\img<trio>[0.2]{Al`Khwarizmi}{khwarizmi, kitab, page}
+\begin{sol}
+  No! we have,
+  \begin{center}
+    \tt{\bk img<label>[width]\{caption\}\{path/f0, path/f1, ... , path/fn\}}
+  \end{center}
+  Or, you can set the path to all the images once with \tt{\bk
+    graphicspath\{\{path\}\}} in the preamble and then you can do,
+  \begin{center}
+    \tt{\bk img<label>[width]\{caption\}\{f0, f1, ... , fn\}}.
+  \end{center}
+  We did \tt{\bk graphicspath\{\{../media/\}\}} with,
+  \begin{center}
+    \tt{\bk img<trio>[0.2]\{Al`Khwarizmi\}\{khwarizmi, kitab, page\}}
+  \end{center}
+  to get the figure \ref{trio}.
+  \img<trio>[0.2]{Al`Khwarizmi}{khwarizmi, kitab, page}
+\end{sol}
 
 \question What about tables?
 
-The following code to the left gets you the table \ref{smptb}.
+\begin{sol}
+  The following code to the left gets you the table \ref{smptb}.
 
-\medskip
-\begin{minipage}{0.45\textwidth}
-  \begin{verbatim}
+  \medskip
+  \begin{minipage}{0.45\textwidth}
+    \begin{verbatim}
 \tbl<smptb>{Sample table.} {
   Linear & Polynomial & Exponential \\
   $x$    & $x^2$      & $2^x$       \\
@@ -106,111 +126,140 @@ The following code to the left gets you the table \ref{smptb}.
   7      & 49         &   127       \\
 }
     \end{verbatim}
-\end{minipage}
-\hfill
-\begin{minipage}{0.45\textwidth} \hspace{1.9em}
-  \begin{tabular}{||c | c | c ||} \hline
-    Linear & Polynomial & Exponential \\ \hline
-    $x$    & $x^2$      & $2^x$       \\ \hline
-    1      & 1          & 2           \\ \hline
-    2      & 4          & 4           \\ \hline
-    3      & 9          & 8           \\ \hline
-    4      & 16         & 16          \\ \hline
-    5      & 25         & 32          \\ \hline
-    6      & 36         & 64          \\ \hline
-    7      & 49         & 127         \\ \hline
-  \end{tabular}
-  \captionsetup{type=table}
-  \captionof{table}{Sample table.}\label{smptb}
-\end{minipage}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth} \hspace{1.9em}
+    \begin{tabular}{||c | c | c ||} \hline
+      Linear & Polynomial & Exponential \\ \hline
+      $x$    & $x^2$      & $2^x$       \\ \hline
+      1      & 1          & 2           \\ \hline
+      2      & 4          & 4           \\ \hline
+      3      & 9          & 8           \\ \hline
+      4      & 16         & 16          \\ \hline
+      5      & 25         & 32          \\ \hline
+      6      & 36         & 64          \\ \hline
+      7      & 49         & 127         \\ \hline
+    \end{tabular}
+    \captionsetup{type=table}
+    \captionof{table}{Sample table.}\label{smptb}
+  \end{minipage}
+\end{sol}
 
 \question Do we have all AMS article environments?
 
-Yes! E. g., the proof environment. Note the fancy \textit{Q.E.D} symbol bellow.
+\begin{sol}
+  Yes! E. g., the proof environment. Note the fancy \textit{Q.E.D} symbol.
 
-\vspace*{1em}
-\begin{minipage}{0.45\textwidth}
-  \begin{verbatim}
+  \vspace*{1em}
+  \begin{minipage}{0.45\textwidth}
+    \begin{verbatim}
   \begin{proof}
     Four is the sum of two integers.
 
     $1,3 \in \Z$ and $1+3=4$.
   \end{proof}
     \end{verbatim}
-\end{minipage}
-\hfill
-\begin{minipage}{0.45\textwidth} \hspace{1.9em}
-  \begin{proof}
-    Four is the sum of two integers.
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth} \hspace{1.9em}
+    \begin{proof}
+      Four is the sum of two integers.
 
-    $1,3 \in \Z$ and $1+3=4$.
-  \end{proof}
-\end{minipage}
+      $1,3 \in \Z$ and $1+3=4$.
+    \end{proof}
+  \end{minipage}
+\end{sol}
 
-\question\label{cardinality} To show citations and references to custom labels: What is the cardinality of $\N$?
+\question\label{cardinality} To show citations and references to
+custom labels: What is the cardinality of $\N$?
 
-It is $\aleph_0$ \cite{arlinghaus1996part} (\texttt{\bk cite\{arlinghaus1996part\}}). See also question \ref{custom-index} (\texttt{\bk ref\{custom-index\}}).
+\begin{sol}
+  It is $\aleph_0$ \cite{arlinghaus1996part} (\tt{\bk
+    cite\{arlinghaus1996part\}}). See also question \ref{custom-index}
+  (\tt{\bk ref\{custom-index\}}).
+\end{sol}
 
 \question What headlines does this class have?
 
-We have the following hierarchy of headlines:
-\begin{enumerate}
-  \item \texttt{\bk question[custom-ind]}
-  \item \texttt{\bk section\{name\}}
-  \item \texttt{\bk subsection\{name\}}
-  \item \texttt{\bk subsubsection\{name\}}.
-\end{enumerate}
+\begin{sol}
+  We have the following hierarchy of headlines:
+  \begin{enumerate}
+    \item \tt{\bk question[custom-ind]}
+    \item \tt{\bk section\{name\}}
+    \item \tt{\bk subsection\{name\}}
+    \item \tt{\bk subsubsection\{name\}}.
+  \end{enumerate}
 
-Since we inherited all the section commands from AMS article, we can also use their stared variants. We demonstrate these bellow,
-\section{Section}
-\subsection{Subsection}
-\subsection{Subsection}
-\section{Another Section}
-\subsection{Subsection}
-\subsubsection*{Subsubsection} This is a started section.
-\subsubsection{Subsubsection} We end here.
+  Since we inherited all the section commands from AMS article, we can
+  also use their stared variants. We demonstrate these bellow,
+  \section{Section}
+  \subsection{Subsection}
+  \subsection{Subsection}
+  \section{Another Section}
+  \subsection{Subsection}
+  \subsubsection*{Subsubsection} This is a started section.
+  \subsubsection{Subsubsection} We end here.
+
+\end{sol}
 
 \question Are all headlines preceded by the question number they are under?
 
-Yes, they are preceded by the index of question they are under.
+\begin{sol}
+  Yes, they are preceded by the index of question they are under.
 
-\section{Section}
-\subsection{Subsection}
-\section{Another Section}
-\subsection{Subsection}
-\subsubsection{Subsubsection}
-\subsubsection{Subsubsection} We end here.
+  \section{Section}
+  \subsection{Subsection}
+  \section{Another Section}
+  \subsection{Subsection}
+  \subsubsection{Subsubsection}
+  \subsubsection{Subsubsection} We end here.
+\end{sol}
 
-\question[IX]\label{custom-index} Is the cardinality of Naturals and Reals the same because they are both infinite?
+\question[IX]\label{custom-index} Is the cardinality of Naturals and
+Reals the same because they are both infinite?
 
-No, the cardinality of $\R$ is greater because they are also uncountable. See also question \ref{cardinality}.
+\begin{sol}
+  No, the cardinality of $\R$ is greater because they are also
+  uncountable. See also question \ref{cardinality}.
+\end{sol}
 
 % \vspace{8\baselineskip}% uncomment to see the next question move to the next page
 \question How much space does a question need at the end of a page?
 
-Starting from the question statement, we need at least 8 lines left on the page or the question moves to next page.
+\begin{sol}
+  Starting from the question statement, we need at least 8 lines left
+  on the page or the question moves to next page.
 
-[4]
+    [4]
 
-[5]
+    [5]
 
-[6]
+    [6]
 
-[7]
+    [7]
 
-[8]
+    [8]
+\end{sol}
 
 \question What is a complete minimal example?
 
-In listing \ref{doc} we show a complete document using \texttt{homework.cls},
+\begin{sol}
+  In listing \ref{doc} we show a complete document using \tt{homework.cls},
 
-\lstinputlisting[language={[LaTeX]TeX}, caption={Complete \LaTeX{} Document}, label=doc]{minimal.tex}
+  \lstinputlisting[
+    language={[LaTeX]TeX},
+    caption={Complete \LaTeX{} Document},
+    label=doc]
+  {minimal.tex}
 
-This will get you a document looking like the one in figure \ref{min}. Note that it appears bigger for illustration purposes only.
+  This will get you a document looking like the one in figure
+  \ref{min}. Note that it appears bigger for illustration purposes
+  only.
 
-\img<min>[0.8]{Out document from listing \ref{doc}.}{./minimal}
+  \img<min>[0.8]{Out document from listing \ref{doc}.}{./minimal}
+\end{sol}
 
-% Tashfeen should run C-c C-s XeLatex BibTex XeLatex XeLatex
+% Tashfeen should run C-c C-s LuaLatex BibTex LuaLatex LuaLatex
 % \cleardoublepage
 \phantomsection
 \addcontentsline{toc}{part}{References}

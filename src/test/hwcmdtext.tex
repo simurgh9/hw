@@ -1,0 +1,47 @@
+\documentclass{article}
+\title{Test Document}
+\author{Tester}
+\date{\today}
+
+\usepackage{../../src/latex/hwcmd}
+
+\begin{document} \maketitle
+
+\tbl<smptb0>{Sample table.} {
+  Linear & Polynomial & Exponential \\
+  $x$    & $x^2$      & $2^x$       \\
+  1      & 1          &     2       \\
+  2      & 4          &     4       \\
+  3      & 9          &     8       \\
+  4      & 16         &    16       \\
+  5      & 25         &    32       \\
+  6      & 36         &    64       \\
+  7      & 49         &   127       \\
+}
+
+\begin{sol}
+  \tbl<smptb1>{Sample table.} {
+    Linear & Polynomial & Exponential \\
+    $x$    & $x^2$      & $2^x$       \\
+    1      & 1          &     2       \\
+    2      & 4          &     4       \\
+    3      & 9          &     8       \\
+    4      & 16         &    16       \\
+    5      & 25         &    32       \\
+    6      & 36         &    64       \\
+    7      & 49         &   127       \\
+  }
+\end{sol}
+
+\tbl<smptb2>{Sample table.} {
+  Linear & Polynomial & Exponential \\
+  $x$    & $x^2$      & $2^x$       \\
+  1      & 1          &     2       \\
+  2      & 4          &     4       \\
+  3      & 9          &     8       \\
+  4      & 16         &    16       \\
+  5      & 25         &    32       \\
+  6      & 36         &    64       \\
+  7      & 49         &   127       \\
+}
+\end{document}

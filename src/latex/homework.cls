@@ -22,9 +22,7 @@
 \ProcessOptions\relax
 \LoadClass[\hw@ptsize, \hw@side]{amsart}
 \RequirePackage[margin=0.5in]{geometry}
-\RequirePackage{lmodern, enumitem, needspace} % needspace for dynamic line breaking
-\RequirePackage{hyperref} % for pdf bookmarks, other information and org-mode
-\RequirePackage{ifthen}
+\RequirePackage{lmodern, enumitem}
 \RequirePackage{hwsymb, hwlst, hwcmd} % tashfeen's
 
 \hypersetup {

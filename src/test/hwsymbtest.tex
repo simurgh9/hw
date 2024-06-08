@@ -1,0 +1,49 @@
+\documentclass{article}
+\title{Test Document}
+\author{Tester}
+\date{\today}
+
+\usepackage{../latex/hwsymb}
+\newcommand{\bk}{\textbackslash}
+\newcommand{\dummy}[1]{\texttt{\bk #1\{\bk frac\{x\}\{2\}\}}}
+
+\begin{document} \maketitle
+It has the symbols shown in table \ref{symbols},
+\begin{table}[hbtp]%
+  \centering%
+  \begin{tabular}{||c | c | c | c ||} \hline
+    Macro                      & Symbol       & Macro                               & Symbol                \\ \hline
+    \texttt{\bk C}             & $\C$         & \dummy{floor}                       & $\floor{\frac{x}{2}}$ \\ \hline
+    \texttt{\bk R}             & $\R$         & \dummy{ceil}                        & $\ceil{\frac{x}{2}}$  \\ \hline
+    \texttt{\bk Q}             & $\Q$         & \dummy{near}                        & $\near{\frac{x}{2}}$  \\ \hline
+    \texttt{\bk Z}             & $\Z$         & \dummy{arr}                         & $\arr{\frac{x}{2}}$   \\ \hline
+    \texttt{\bk N}             & $\N$         & \dummy{paren}                       & $\paren{\frac{x}{2}}$ \\ \hline
+    \texttt{\bk P}             & $\P$         & \dummy{brk}                         & $\brk{\frac{x}{2}}$   \\ \hline
+    \texttt{\bk F}             & $\F$         & \dummy{curl}                        & $\curl{\frac{x}{2}}$  \\ \hline
+    \texttt{\bk GF, \bk GF[7]} & $\GF,\GF[7]$ & \dummy{abs}                         & $\abs{\frac{x}{2}}$   \\ \hline
+    \texttt{\bk 0}             & $\nil$       & \texttt{\bk modulo[7]}              & $\modulo[7]$          \\ \hline
+    \texttt{\bk O(n)}          & $\O(n)$      & \texttt{\bk vec\{v\}}               & $\vec{v}$             \\ \hline
+    \texttt{\bk ?}             & $\?$         & \texttt{\bk bijective}              & $\bijective$          \\ \hline
+    \texttt{\bk is}            & $\is$        & \texttt{\bk surjective}             & $\surjective$         \\ \hline
+    \texttt{\bk al}            & $\al$        & \texttt{\bk injective}              & $\injective$          \\ \hline
+    \texttt{\bk ep}            & $\ep$        & \texttt{\bk Ra}                     & $\Ra$                 \\ \hline
+    \texttt{\bk phi}           & $\phi$       & \texttt{\bk ra}                     & $\ra$                 \\ \hline
+    \texttt{\bk p}             & $\p$         & \texttt{\bk derivative[g]\{f\}}     & $\derivative[g]{f}$   \\ \hline
+    \texttt{\bk D}             & $\D$         & \texttt{\bk derivative\{\bk zeta\}} & $\derivative{\zeta}$  \\ \hline
+  \end{tabular}
+  \caption{Symbols table.}%
+  \label{symbols}%
+\end{table}%
+
+The commands that have twin delimiters expand according to their input,
+\[
+  \floor{x}, \ceil{y}, \near{z}, \arr{x,y,z},
+  \floor{\frac{x}{2}} < \frac{x}{2} < \ceil{\frac{x}{2}},
+  \near{\frac{x}{2}},
+  \arr{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+  \paren{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+  \brk{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+  \curl{\frac{x}{2}, \frac{x}{3}, \frac{x}{4}},
+  \abs{\frac{x}{2}}
+\]
+\end{document}
