@@ -48,6 +48,13 @@
 }
 
 \ExplSyntaxOn
+\definecolor{darkmode-fore}{HTML}{DFDFDF}
+\definecolor{darkmode-back}{HTML}{282C34}
+\NewDocumentCommand{\darkmode}{}{%
+  \pagecolor{darkmode-back}
+  \color{darkmode-fore}
+}
+
 \NewDocumentCommand{\fold}{}{%
   \excludecomment{sol}% from the comment library
 }
