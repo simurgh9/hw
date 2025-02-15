@@ -51,6 +51,7 @@
   \begin{center}\unskip%
     \textbf{\@title}%
   \end{center}%
+  \box\abstractbox% https://tex.stackexchange.com/a/597708/215221
   \addvspace{\medskipamount}%
 }
 
