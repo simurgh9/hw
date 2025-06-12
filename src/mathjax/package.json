@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Tashfeen's custom build of MathJax.",
   "scripts": {
-    "test": "brave-browser ../../examples/mathjax/test.html",
+    "test": "open -a \"Brave Browser\" ../test/hwjax.html",
     "make-hwjax": "(cd ./hwjax && exec node ../node_modules/mathjax-full/components/bin/pack)",
     "make-hwsymb": "(cd ./hwsymb_ext && exec node ../node_modules/mathjax-full/components/bin/pack)",
     "build" : "npm run make-hwsymb && npm run make-hwjax"

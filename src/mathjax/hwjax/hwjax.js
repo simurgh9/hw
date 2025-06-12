@@ -15,6 +15,7 @@ Loader.preLoad(
   'output/chtml',
   'output/chtml/fonts/tex.js',
   'ui/menu',
+  'ui/safe',
   '[tex]/ams',
   '[tex]/newcommand',
   '[tex]/configmacros',
@@ -34,7 +35,8 @@ insert(MathJax.config, {
   },
   tex: {
     packages: { '[+]': ['ams', 'newcommand', 'configmacros', 'action', 'require', 'autoload', 'hwsymb'] },
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    displayMath: [['\\[', '\\]'], ['$$', '$$']],  // block
+    inlineMath: [['\\(', '\\)']]                  // inline
   },
   chtml: {
     fontURL: CDN + '/output/chtml/fonts/woff-v2',
@@ -53,6 +55,7 @@ import '../node_modules/mathjax-full/components/src/input/tex-base/tex-base.js';
 import '../node_modules/mathjax-full/components/src/output/chtml/chtml.js';
 import '../node_modules/mathjax-full/components/src/output/chtml/fonts/tex/tex.js';
 import '../node_modules/mathjax-full/components/src/ui/menu/menu.js';
+import '../node_modules/mathjax-full/components/src/ui/safe/safe.js';
 import '../node_modules/mathjax-full/components/src/input/tex/extensions/ams/ams.js';
 import '../node_modules/mathjax-full/components/src/input/tex/extensions/newcommand/newcommand.js';
 import '../node_modules/mathjax-full/components/src/input/tex/extensions/configmacros/configmacros.js';
