@@ -1,7 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{hwcmd}[2024/01/01 hwcmd]
 
-\RequirePackage{comment}% for hiding solutions
 \RequirePackage{graphicx}
 \RequirePackage{needspace}% needspace for dynamic line breaking
 \RequirePackage{hyperref}% for pdf bookmarks, other information and homework.cls
@@ -55,14 +54,26 @@
   \color{darkmode-fore}
 }
 
-\NewDocumentCommand{\fold}{}{%
-  \excludecomment{sol}% from the comment library
+\NewDocumentCommand{\acmfonts}{}{%
+  \usepackage[T1]{fontenc}
+  \usepackage[tt=false, type1=true]{libertine}
+  \usepackage[varqu]{zi4}
+  \usepackage[libertine]{newtxmath}
+}
+
+\NewDocumentCommand{\printfonts}{}{%
+  \let\phi\undefined
+  \usepackage{libris}% changes \sfdefault
+  \renewcommand*\familydefault{\sfdefault}
+  \usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
 }
 
 \NewDocumentEnvironment{sol}{O{\solcolor}}{%
   \gdef\withinsolution{1}%
   \begin{color}{\solcolor}\ignorespaces%
-}{\gdef\withinsolution{0}\end{color}\ignorespacesafterend}
+}{%
+  \gdef\withinsolution{0}\end{color}\ignorespacesafterend%
+}
 
 \NewDocumentCommand\img{d<>O{0.4}mm} {%
   \begin{figure}[hbtp]%
