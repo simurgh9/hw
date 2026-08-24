@@ -12,7 +12,7 @@
 \address{Bayt El-Hikmah}
 
 \graphicspath{{../../media/}} % tex.stackexchange.com/q/139401/215221
-\newcommand{\bk}{\textbackslash}
+\newcommand*{\bk}{\textbackslash}
 \renewcommand\tt[1]{\texttt{#1}}
 \newcommand{\dummy}[1]{\texttt{\bk #1\{\bk frac\{x\}\{2\}\}}}
 \newcommand{\amslink}{%
@@ -21,6 +21,9 @@
   }}
 
 % \renewcommand\solcolor{black}% uncomment this if you're colour blind.
+% \acmfonts{}
+% \printfonts{}
+% \garamondfonts{}
 
 \begin{document} \maketitle
 
@@ -28,8 +31,13 @@
 
 \begin{sol}
   This is a demonstration of my homework class aiming to ease a few of
-  the \textit{hassles} of \LaTeX{}. It is an extension of the \amslink
-  (\tt{amsart}) class and should have all of its functionality.
+  the \textit{hassles} of \LaTeX{}.
+  \[
+    \mathbf{B}(P) = \frac{\mu_0}{4\pi}
+    \int\frac{\mathbf{I}\times\hat{r}'}{r'^2}dl = \frac{\mu_0}{4\pi}\,I\!
+    \int\frac{d\boldsymbol{l}\times\hat{r}'}{r'^2}
+  \]
+  It is an extension of the \amslink (\tt{amsart}) class.
 \end{sol}
 
 \question What preamble commands does the class have?
@@ -54,13 +62,21 @@
   \tbl<symbols>{Symbols table.}{
     Macro                  & Symbol       & Macro                           & Symbol                \\
     \tt{\bk C}             & $\C$         & \dummy{floor}                   & $\floor{\frac{x}{2}}$ \\
+    \addlinespace[0.3ex]
     \tt{\bk R}             & $\R$         & \dummy{ceil}                    & $\ceil{\frac{x}{2}}$  \\
+    \addlinespace[0.3ex]
     \tt{\bk Q}             & $\Q$         & \dummy{near}                    & $\near{\frac{x}{2}}$  \\
+    \addlinespace[0.3ex]
     \tt{\bk Z}             & $\Z$         & \dummy{arr}                     & $\arr{\frac{x}{2}}$   \\
+    \addlinespace[0.3ex]
     \tt{\bk N}             & $\N$         & \dummy{paren}                   & $\paren{\frac{x}{2}}$ \\
+    \addlinespace[0.3ex]
     \tt{\bk P}             & $\P$         & \dummy{brk}                     & $\brk{\frac{x}{2}}$   \\
+    \addlinespace[0.3ex]
     \tt{\bk F}             & $\F$         & \dummy{curl}                    & $\curl{\frac{x}{2}}$  \\
+    \addlinespace[0.3ex]
     \tt{\bk GF, \bk GF[7]} & $\GF,\GF[7]$ & \dummy{abs}                     & $\abs{\frac{x}{2}}$   \\
+    \addlinespace[0.3ex]
     \tt{\bk 0}             & $\nil$       & \tt{\bk modulo[7]}              & $\modulo[7]$          \\
     \tt{\bk O(n)}          & $\O(n)$      & \tt{\bk vec\{v\}}               & $\vec{v}$             \\
     \tt{\bk ?}             & $\?$         & \tt{\bk bijective}              & $\bijective$          \\
@@ -69,9 +85,10 @@
     \tt{\bk ep}            & $\ep$        & \tt{\bk Ra}                     & $\Ra$                 \\
     \tt{\bk phi}           & $\phi$       & \tt{\bk ra}                     & $\ra$                 \\
     \tt{\bk p}             & $\p$         & \tt{\bk derivative[g]\{f\}}     & $\derivative[g]{f}$   \\
+    \addlinespace[0.5ex]
     \tt{\bk D}             & $\D$         & \tt{\bk derivative\{\bk zeta\}} & $\derivative{\zeta}$  \\
   }
-
+  
   The commands that have twin delimiters expand according to their input,
   \[
     \floor{x}, \ceil{y}, \near{z}, \arr{x,y,z},
@@ -128,16 +145,19 @@
   \end{minipage}
   \hfill
   \begin{minipage}{0.45\textwidth} \hspace{1.9em}
-    \begin{tabular}{||c | c | c ||} \hline
-      Linear & Polynomial & Exponential \\ \hline
-      $x$    & $x^2$      & $2^x$       \\ \hline
-      1      & 1          & 2           \\ \hline
-      2      & 4          & 4           \\ \hline
-      3      & 9          & 8           \\ \hline
-      4      & 16         & 16          \\ \hline
-      5      & 25         & 32          \\ \hline
-      6      & 36         & 64          \\ \hline
-      7      & 49         & 127         \\ \hline
+    \begin{tabular}{ccc}
+      \toprule
+      Linear & Polynomial & Exponential \\
+      \midrule
+      $x$    & $x^2$      & $2^x$       \\
+      1      & 1          & 2           \\
+      2      & 4          & 4           \\
+      3      & 9          & 8           \\
+      4      & 16         & 16          \\
+      5      & 25         & 32          \\
+      6      & 36         & 64          \\
+      7      & 49         & 127         \\
+      \bottomrule
     \end{tabular}
     \captionsetup{type=table}
     \captionof{table}{Sample table.}\label{smptb}
@@ -198,7 +218,6 @@ custom labels: What is the cardinality of $\N$?
   \subsection{Subsection}
   \subsubsection*{Subsubsection} This is a started section.
   \subsubsection{Subsubsection} We end here.
-
 \end{sol}
 
 \question Are all headlines preceded by the question number they are under?
@@ -254,9 +273,8 @@ Reals the same because they are both infinite?
   This will get you a document looking like the one in figure
   \ref{min}. Note that it appears bigger for illustration purposes
   only.
-
-  \img<min>[0.8]{Out document from listing \ref{doc}.}{./minimal}
 \end{sol}
+\img<min>[0.8]{Out document from listing \ref{doc}.}{./minimal}
 
 % Tashfeen should run C-c C-s LuaLatex BibTex LuaLatex LuaLatex
 % \cleardoublepage

@@ -2,14 +2,26 @@
 \ProvidesPackage{hwcmd}[2024/01/01 hwcmd]
 
 \RequirePackage{graphicx}
+\RequirePackage{booktabs}% for tables
 \RequirePackage{needspace}% needspace for dynamic line breaking
 \RequirePackage{hyperref}% for pdf bookmarks, other information and homework.cls
 \RequirePackage{pgffor, ifthen}% for loops and if statements
 \RequirePackage[caption=false]{subfig}
-\RequirePackage[tableposition=below]{caption}% https://tex.stackexchange.com/a/424725/215221
-\ifx\directlua\undefined
-  \RequirePackage{xcolor}
-\else
+\RequirePackage{caption}% https://tex.stackexchange.com/a/424725/215221
+\DeclareCaptionLabelSeparator{emdash}{\textemdash}
+\captionsetup[table]{skip=7pt}%
+\captionsetup{%
+  figureposition=below,%
+  tableposition=below,%
+  margin=\parindent,%
+  indention=\parindent,%
+  font=footnotesize,%
+  labelfont={sc},%
+  textfont={sf},%
+  labelsep=emdash%
+}
+\RequirePackage{xcolor}
+\ifx\directlua\undefined\else
   \RequirePackage{luacolor}
 \fi
 
@@ -46,26 +58,28 @@
   \PackageWarning{hwcmd}{\noexpand\fig is deprecated, use \noexpand\img instead}
 }
 
+\NewDocumentCommand\soren{}{%
+  ``When I was young, I forgot how to laugh in the cave of Trophonius;
+  when I was older, I opened my eyes and beheld reality, at which I
+  began to laugh, and since then, I have not stopped laughing. I saw
+  that the meaning of life was to secure a livelihood, and that its goal
+  was to attain a high position; that love’s rich dream was marriage
+  with an heiress; that friendship’s blessing was help in financial
+  difficulties; that wisdom was what the majority assumed it to be; that
+  enthusiasm consisted in making a speech; that it was courage to risk
+  the loss of ten dollars; that kindness consisted in saying, `You are
+  welcome,' at the dinner table; that piety consisted in going to
+  communion once a year. This I saw, and I laughed.''
+
+  ---S\o{}ren Kierkegaard
+}
+
 \ExplSyntaxOn
 \definecolor{darkmode-fore}{HTML}{DFDFDF}
 \definecolor{darkmode-back}{HTML}{282C34}
 \NewDocumentCommand{\darkmode}{}{%
   \pagecolor{darkmode-back}
   \color{darkmode-fore}
-}
-
-\NewDocumentCommand{\acmfonts}{}{%
-  \usepackage[T1]{fontenc}
-  \usepackage[tt=false, type1=true]{libertine}
-  \usepackage[varqu]{zi4}
-  \usepackage[libertine]{newtxmath}
-}
-
-\NewDocumentCommand{\printfonts}{}{%
-  \let\phi\undefined
-  \usepackage{libris}% changes \sfdefault
-  \renewcommand*\familydefault{\sfdefault}
-  \usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
 }
 
 \NewDocumentEnvironment{sol}{O{\solcolor}}{%
@@ -75,35 +89,39 @@
   \gdef\withinsolution{0}\end{color}\ignorespacesafterend%
 }
 
-\NewDocumentCommand\img{d<>O{0.4}mm} {%
+\NewDocumentCommand\img{d<>O{0.4}omm}{%
   \begin{figure}[hbtp]%
     \centering% don't introduce new lines in \subfloat{...}
-    \foreach \path [count=\i] in {#4} {%
+    \foreach \path [count=\i] in {#5} {%
         \ifthenelse{\equal{\i}{1}}{}{\hspace{0.25cm}}%
         \begin{minipage}{#2\textwidth}%
           \subfloat{\includegraphics[width=\linewidth]{\path}}%
         \end{minipage}%
       }%
-    \caption{#3}\IfValueT{#1}{\label{#1}}%
+    \if\withinsolution1
+      \captionsetup{labelfont={color=\solcolor,sc},font={color=\solcolor,footnotesize}}%
+    \fi
+    \IfValueTF{#3}{\caption[#3]{#4}}{\caption{#4}}%
+    \IfValueT{#1}{\label{#1}}%
   \end{figure}%
 }
 
-\NewDocumentCommand\tbl{d<>mm} {%
+\NewDocumentCommand\tbl{d<>omm} {%
   \if\withinsolution1
   \begin{table}[hbtp]%
     \centering%
     \begin{color}{\solcolor}%
-      \scribe_tbl:n { #3 }%
+      \scribe_tbl:n { #4 }%
     \end{color}%
-    \captionsetup{labelfont={color=\solcolor},font={color=\solcolor}}
-    \caption{#2}%
+    \captionsetup{labelfont={color=\solcolor,sc},font={color=\solcolor,footnotesize}}%
+    \IfValueTF{#2}{\caption[#2]{#3}}{\caption{#3}}%
     \IfValueT{#1}{\label{#1}}%
   \end{table}%
   \else%
   \begin{table}[hbtp]%
     \centering%
-    \scribe_tbl:n { #3 }%
-    \caption{#2}%
+    \scribe_tbl:n { #4 }%
+    \IfValueTF{#2}{\caption[#2]{#3}}{\caption{#3}}%
     \IfValueT{#1}{\label{#1}}%
   \end{table}%
   \fi
@@ -124,10 +142,14 @@
       \int_max:nn { \l__scribe_tbl_cols_int } { \seq_count:N \l__scribe_tbl_row_seq }
     }
   }
-  \begin{tabular}{ ||*{\l__scribe_tbl_cols_int}{c|}| }
-    \hline
-    \seq_use:Nn \l__scribe_tbl_body_seq { \\ \hline }
-    \\ \hline
-  \end{tabular}
+  \seq_pop_left:NN \l__scribe_tbl_body_seq \l_tmpa_tl
+  \begin{tabular}{ *{\l__scribe_tbl_cols_int}{c} }
+    \toprule%
+    \tl_use:N \l_tmpa_tl \\
+    \midrule%
+    \seq_if_empty:NF \l__scribe_tbl_body_seq
+      { \seq_use:Nn \l__scribe_tbl_body_seq { \\ } \\ }
+    \bottomrule%
+  \end{tabular}%
 }
 \ExplSyntaxOff

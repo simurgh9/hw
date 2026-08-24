@@ -22,8 +22,71 @@
 \ProcessOptions\relax
 \LoadClass[\hw@ptsize, \hw@side]{amsart}
 \RequirePackage[margin=0.5in]{geometry}
-\RequirePackage{lmodern, enumitem}
 \RequirePackage{hwsymb, hwlst, hwcmd}
+\AtEndPreamble{%
+  \RequirePackage[tracking=smallcaps]{microtype}
+  \AtBeginEnvironment{verbatim}{\microtypesetup{activate=false}}
+  \SetTracking{encoding=*, shape=sc}{70}
+}%
+\RequirePackage{lmodern}
+\ifx\directlua\undefined
+  \RequirePackage[T1]{fontenc}
+\fi
+
+\NewDocumentCommand{\acmfonts}{}{%
+  \ifx\directlua\undefined
+    \usepackage[tt=false, type1=true]{libertine}
+    \usepackage[libertine]{newtxmath}
+  \else
+    \usepackage{unicode-math}
+    \unimathsetup{math-style=TeX}
+    \setmainfont{Linux Libertine O}
+    \setsansfont{Linux Biolinum O}
+    \setmonofont{IBM Plex Mono}[Scale=MatchLowercase]
+    \setmathfont{Libertinus Math}
+    \AtBeginDocument{\renewcommand{\boldmath}{}}
+  \fi
+}
+
+\NewDocumentCommand{\printfonts}{}{%
+  \let\phi\undefined
+  \usepackage{libris}% changes \sfdefault
+  \renewcommand*\familydefault{\sfdefault}
+  \ifx\directlua\undefined
+    \usepackage[euler-digits,euler-hat-accent,T1]{eulervm}
+  \else
+    \usepackage[euler-digits,euler-hat-accent]{eulervm}
+  \fi
+}
+
+\NewDocumentCommand{\garamondfonts}{}{%
+  \ifx\directlua\undefined
+    \usepackage[cmintegrals,cmbraces]{newtxmath}
+    \usepackage[lining,tabular]{ebgaramond-maths}% loads ebgaramond, sets \rmdefault
+    \usepackage[scale=0.8]{plex-sans}%        sets \sfdefault
+    \usepackage[scale=0.8]{plex-mono}% sets \ttdefault
+    % EB Garamond lacks these; borrow from Latin Modern math italic
+    \DeclareSymbolFont{lmletters}{OML}{lmm}{m}{it}%
+    \SetSymbolFont{lmletters}{bold}{OML}{lmm}{b}{it}%
+    \re@DeclareMathSymbol{\partial}{\mathord}{lmletters}{"40}%
+    \let\vec\relax
+    \DeclareMathAccent{\vec}{\mathord}{lmletters}{"7E}%
+  \else
+    \usepackage{unicode-math}
+    \unimathsetup{math-style=TeX}
+    \setmainfont{EB Garamond}[Numbers={Lining,Tabular}]
+    \setsansfont{IBM Plex Sans}[Scale=MatchLowercase]
+    \setmonofont{IBM Plex Mono}[Scale=MatchLowercase]
+    \setmathfont{Garamond-Math.otf}[StylisticSet={7,9}]
+    \renewcommand{\boldsymbol}{\symbfit}
+    \AtBeginDocument{\renewcommand{\boldmath}{}}
+    \AtBeginDocument{%
+      \let\tmpphi\phi
+      \let\phi\varphi
+      \let\varphi\tmpphi
+    }%
+  \fi
+}
 
 \hypersetup {
   pdfstartview=FitH,

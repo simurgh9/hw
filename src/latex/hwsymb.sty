@@ -2,15 +2,15 @@
 \ProvidesPackage{hwsymb}[2024/01/01 hwsymb]
 
 \RequirePackage{amsmath, amssymb, amsthm, amscd}
-
+\RequirePackage{enumitem}
+% beamer does not define a \labelenumi therefore this can't be renewed.
+\def\labelenumi{\theenumi)} % to make (n) into n)
 % new and renewed commands
 \DeclareRobustCommand{\bb}[1]{\mathbb{#1}}
 \DeclareRobustCommand{\cal}[1]{\mathcal{#1}}
 \DeclareRobustCommand{\sc}[1]{\textsc{#1}}
 \DeclareMathOperator{\D}{d}
 \renewcommand{\qedsymbol}{$_{\scriptstyle \substack{\sc{quod}\\\sc{erat}\\\sc{dem}\scalebox{0.53}{$\blacksquare$}}}$}
-% beamer does not define a \labelenumi therefore this can't be renewed.
-\def\labelenumi{\theenumi)} % to make (n) into n)
 
 % Symbols
 \newcommand*{\eg}{\leavevmode\unskip , e. g., \ignorespaces}
